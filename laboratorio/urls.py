@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
 
@@ -23,5 +23,5 @@ from laboratorio import settings
 urlpatterns = [
     url(r'^$', BaseAdmin.as_view(), name='baseAdmin'),
     url(r'^admin/', admin.site.urls),
-    url(r'^examen/', admin.site.urls),
+    url(r'^examenes/', include('apps.examen.urls', namespace='examen')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

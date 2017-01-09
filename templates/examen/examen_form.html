@@ -1,0 +1,49 @@
+{% extends 'utils/admin/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="card">
+
+        <!-- Title -->
+        {% include 'utils/admin/tittle.html' %}
+        <!-- END Title -->
+
+        <!-- Error Message -->
+        {% include 'utils/admin/error_message.html' %}
+        <!-- END Error Message -->
+
+        <div class="card-body card-padding">
+            <div class="form-group has-warning has-feedback">
+                <label class="control-label" for="inputWarning2">Input with warning</label>
+                <div class="fg-line">
+                    <input type="text" class="form-control" id="inputWarning2">
+                </div>
+                <span class="zmdi zmdi-alert-triangle form-control-feedback"></span>
+            </div>
+
+            <div class="form-group has-success has-feedback">
+                <label class="control-label" for="inputSuccess2">Input with success</label>
+                <div class="fg-line">
+                    <input type="text" class="form-control" id="inputSuccess2">
+                </div>
+                <span class="zmdi zmdi-check form-control-feedback"></span>
+            </div>
+
+            <div class="form-group has-error fg-float">
+                <div class="fg-line">
+                    <input type="text" class="form-control input-lg fg-input" id="inputError2" value="asdasd">
+                    <label style="color: #ff0200" class="fg-label">Input Large</label>
+                </div>
+                <span class="zmdi zmdi-close form-control-feedback"></span>
+            </div>
+
+            <div class="m-b-10 ">
+                <button class="btn btn-success btn-sm hec-save">Save</button>
+            </div>
+            <button class="btn palette-Teal bg waves-effect">rubberBand</button>
+        </div>
+    </div>
+{% endblock content %}
+{% block js %}
+
+        <script src="{% static 'vendors/farbtastic/farbtastic.min.js' %}"></script>
+{% endblock js %}
